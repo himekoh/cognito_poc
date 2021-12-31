@@ -23,6 +23,12 @@ jobs:
         uses: actions/checkout@v1
         with:
           fetch-depth: 1
+          
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: Build
+        run: npm run build 
 
       - name: Publish to AWS S3
         uses: opspresso/action-s3-sync@master
