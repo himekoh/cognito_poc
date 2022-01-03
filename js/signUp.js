@@ -32,7 +32,7 @@ document.getElementById("signUpButton").addEventListener("click", function () {
             // 確認コード入力用エリア作成
             const input = document.createElement('input');
             input.type = 'text';
-            input.id = 'confirmCode';
+            input.id = 'confirmcode';
             input.placeholder = 'confirmCode';
             document.getElementById("signup-container").appendChild(input);
             // 確認コード送信用ボタン作成
@@ -43,7 +43,7 @@ document.getElementById("signUpButton").addEventListener("click", function () {
             document.getElementById("signup-container").appendChild(button);
             // 
             document.getElementById("confirmButton").addEventListener("click", function () {
-                Auth.confirmSignUp(document.getElementById("email").value, document.getElementById("confirm").value).then(() => {
+                Auth.confirmSignUp(document.getElementById("email").value, document.getElementById("confirmcode").value).then(() => {
                     console.log("Sign Up Success!!");
                 });
             });
