@@ -5,11 +5,11 @@ async function signUp() {
         const cognitoUser = await Auth.signUp({
             username,
             password
-            // attributes: {
-            //     email,          // optional
-            //     phone_number,   // optional - E.164 number convention
+            attributes: {
+                email,          // optional
+                phone_number   // optional - E.164 number convention
             //     // other custom attributes 
-            // }
+            }
         });
         console.log(cognitoUser);
         
@@ -28,7 +28,7 @@ async function signUp() {
             document.getElementById("signup-container").appendChild(button);
             // 
             document.getElementById("confirmButton").addEventListener("click", function() {
-                Auth.confirmSignUp(document.getElementById("email").value, document.getElementById("confirmButton").value).then(() => {
+                Auth.confirmSignUp(document.getElementById("email").value, document.getElementById("confirm").value).then(() => {
                     console.log("Sign Up Success!!");
                 });
             });
@@ -38,8 +38,16 @@ async function signUp() {
     }
 }
 
-document.getElementById("signUpButton").addEventListener("click", function() {
-    Auth.signUp(document.getElementById("email").value ,document.getElementById("password").value);
+document.getElementById("signUpButton").addEventListener("click", function () {
+    const param = {
+        username: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+        attributes:{
+            email: document.getElementById("email").value,
+            phone_number: document.getElementById("phonenumber").value
+        }
+    }
+    Auth.signUp(param);
 });
 
 
