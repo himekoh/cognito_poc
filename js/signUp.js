@@ -6,7 +6,7 @@ async function signUp() {
             username,
             password,
             attributes: {
-                email,          // optional
+                // email,          // optional
                 phone_number   // optional - E.164 number convention
             //     // other custom attributes 
             }
@@ -43,7 +43,7 @@ document.getElementById("signUpButton").addEventListener("click", function () {
         username: document.getElementById("email").value,
         password: document.getElementById("password").value,
         attributes:{
-            email: document.getElementById("email").value,
+            // email: document.getElementById("email").value,
             phone_number: document.getElementById("phonenumber").value
         }
     }
