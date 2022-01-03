@@ -31,9 +31,9 @@ document.getElementById("signUpButton").addEventListener("click", function () {
         .then(() => {
             // 確認コード入力用エリア作成
             const input = document.createElement('input');
-            input.type = 'text';
-            input.id = 'confirmcode';
-            input.placeholder = 'confirmCode';
+            input.setAttribute("type","text");
+            input.setAttribute("id", "confirmcode");
+            input.setAttribute("placeholder","confirmCode");
             document.getElementById("signup-container").appendChild(input);
             // 確認コード送信用ボタン作成
             const button = document.createElement('input');
