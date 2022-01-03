@@ -4,7 +4,7 @@ async function signUp() {
     try {
         const cognitoUser = await Auth.signUp({
             username,
-            password
+            password,
             attributes: {
                 email,          // optional
                 phone_number   // optional - E.164 number convention
