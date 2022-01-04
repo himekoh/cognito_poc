@@ -29,25 +29,26 @@ document.getElementById("signUpButton").addEventListener("click", function () {
     }
     Auth.signUp(param)
         .then(() => {
-            // 確認コード入力用エリア作成
-            const input = document.createElement('input');
-            input.setAttribute("type","text");
-            input.setAttribute("id", "confirmcode");
-            input.setAttribute("placeholder","confirmCode");
-            document.getElementById("signup-container").appendChild(input);
-            // 確認コード送信用ボタン作成
-            const button = document.createElement('input');
-            input.type = 'button';
-            input.id = 'confirmButton';
-            input.value = 'Confirm';
-            document.getElementById("signup-container").appendChild(button);
+            // // 確認コード入力用エリア作成
+            // const input = document.createElement('input');
+            // input.setAttribute("type","text");
+            // input.setAttribute("id", "confirmcode");
+            // input.setAttribute("placeholder","confirmCode");
+            // document.getElementById("signup-container").appendChild(input);
+            // // 確認コード送信用ボタン作成
+            // const button = document.createElement('input');
+            // input.type = 'button';
+            // input.id = 'confirmButton';
+            // input.value = 'Confirm';
+            // document.getElementById("signup-container").appendChild(button);
             // 
-            document.getElementById("confirmButton").addEventListener("click", function () {
-                Auth.confirmSignUp(document.getElementById("email").value, document.getElementById("confirmcode").value).then(() => {
-                    console.log("Sign Up Success!!");
-                });
-            });
+            console.log("Sign Up (not confirmed)");
         });
+});
+document.getElementById("confirmButton").addEventListener("click", function () {
+    Auth.confirmSignUp(document.getElementById("email").value, document.getElementById("confirmcode").value).then(() => {
+        console.log("Sign Up Succeed!");
+    });
 });
 
 
