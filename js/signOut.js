@@ -7,3 +7,9 @@ async function signOut() {
         console.log('error signing out: ', error);
     }
 }
+document.getElementById("logOutButton").addEventListener("click", function () {
+    Auth.signOut().then(() => {
+        console.log("Log Out Succeed!");
+        window.location.href = '../index.html';
+    });
+});

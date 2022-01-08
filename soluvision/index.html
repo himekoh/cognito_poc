@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width = device-width">
-        <title>Cognito PoC Soluvision</title>
-    </head>
-    <body>
-        <header>
-            <h>Cognito PoC Soluvision</h>
-        </header>
-        <footer>
-            
-        </footer>
+	<html>
+		<head>
+			<meta charset="UTF-8" />
+			<meta name="viewport" content="width = device-width" />
+			<title>Cognito PoC Soluvision Page</title>
+		</head>
+		<body>
+			<header>
+				<h>Cognito PoC Soluvision Page</h>
+			</header>
+			<p><input type="button" id="logOutButton" value="Log Out" /></p>
+            <div id="displayArea">
 
-    </body>
+            </div>
+			<footer></footer>
+			<script src="dist/index.js" type="module"></script>
+			<script>
+				Auth.currentSession()
+					.then((session) => {
+						// document.getElementById("signInButton").style.display = "none";
+						// document.getElementById("signOutButton").style.display = "block";
+						document.getElementById("displayArea").innerText = JSON.stringify(
+							session,
+							null,
+							2
+						);
+					})
+					.catch((e) => {
+						console.log(e);
+					});
+			</script>
+		</body>
+	</html>
 </html>
