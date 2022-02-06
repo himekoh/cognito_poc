@@ -11,15 +11,13 @@
 				<h>Cognito PoC Soluvision Page</h>
 			</header>
 			<p><input type="button" id="logOutButton" value="Log Out" /></p>
-            <div id="displayArea">
-
-            </div>
+			<div id="displayArea"></div>
 			<footer></footer>
 			<script src="dist/index.js" type="module"></script>
 			<script>
 				Auth.currentSession()
 					.then((session) => {
-                        console.log("Token get start!")
+						console.log("Token get start!");
 						// document.getElementById("signInButton").style.display = "none";
 						// document.getElementById("signOutButton").style.display = "block";
 						document.getElementById("displayArea").innerText = JSON.stringify(
@@ -30,6 +28,14 @@
 					})
 					.catch((e) => {
 						console.log(e);
+					});
+				document
+					.getElementById("logOutButton")
+					.addEventListener("click", function () {
+						Auth.signOut().then(() => {
+							console.log("Log Out Succeed!");
+							window.location.href = "../index.html";
+						});
 					});
 			</script>
 		</body>
