@@ -19,6 +19,7 @@
 			<script>
 				Auth.currentSession()
 					.then((session) => {
+                        console.log("Token get start!")
 						// document.getElementById("signInButton").style.display = "none";
 						// document.getElementById("signOutButton").style.display = "block";
 						document.getElementById("displayArea").innerText = JSON.stringify(
