@@ -49,14 +49,14 @@ if (signUpButton) {
 		}
 	});
 }
-var confirmButton = document.getElementById("confirmButton");
-if (confirmButton) {
-	confirmButton.addEventListener("click", function () {
-		Auth.confirmSignUp(
-			document.getElementById("email").value,
-			document.getElementById("confirmcode").value
-		).then(() => {
-			console.log("Sign Up Succeed!");
-		});
-	});
-}
+// var confirmButton = document.getElementById("confirmButton");
+// if (confirmButton) {
+// 	confirmButton.addEventListener("click", function () {
+// 		Auth.confirmSignUp(
+// 			document.getElementById("email").value,
+// 			document.getElementById("confirmcode").value
+// 		).then(() => {
+// 			console.log("Sign Up Succeed!");
+// 		});
+// 	});
+// }

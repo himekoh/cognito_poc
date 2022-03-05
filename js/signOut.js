@@ -9,22 +9,24 @@ async function signOut() {
 }
 var tokenGetButton = document.getElementById("tokenGetButton");
 if (tokenGetButton) {
-	Auth.currentSession()
-		.then((session) => {
-			console.log("Token get start!");
-			// document.getElementById("signInButton").style.display = "none";
-			// document.getElementById("signOutButton").style.display = "block";
-			document.getElementById("displayArea").innerText = JSON.stringify(
-				session,
-				null,
-				2
-			);
-		})
-        .catch((e) => {
-            console.log("token get error");
-			console.log(e);
-		});
-}
+	tokenGetButton.addEventListener("click", function () {
+		Auth.currentSession()
+			.then((session) => {
+				console.log("Token get start!");
+				// document.getElementById("signInButton").style.display = "none";
+				// document.getElementById("signOutButton").style.display = "block";
+				document.getElementById("displayArea").innerText = JSON.stringify(
+					session,
+					null,
+					2
+				);
+			})
+			.catch((e) => {
+				console.log("token get error");
+				console.log(e);
+			})
+	});
+};
 var logOutButton = document.getElementById("logOutButton");
 if (logOutButton) {
 	logOutButton.addEventListener("click", function () {
@@ -33,4 +35,5 @@ if (logOutButton) {
 			window.location.href = "../index.html";
 		});
 	});
-}
+};
+
